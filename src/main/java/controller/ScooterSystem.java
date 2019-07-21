@@ -34,7 +34,6 @@ public class ScooterSystem {
 
 
     public boolean rentScooter(User user, int IDScooter) {
-        //TODO co jeśli lista scooterów będzie null?
         for (Scooter scooter : dataBase.getScooterList()) {
             if (scooter.getScooterID() == IDScooter) {
                 if (!scooter.isRent()) {
@@ -44,10 +43,10 @@ public class ScooterSystem {
                     return true;
                 }
             }
-            return false;
         }
         return false;
     }
+
 
     public DataBase getDataBase() {
         return dataBase;
