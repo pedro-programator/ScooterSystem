@@ -14,7 +14,7 @@ public class SystemAddUserAndScooterTest {
     @Test
     void checkAddingUsers() {
         mySystem.addUser(user1);
-
+        //NOT FINISHED YET
     }
 
 }
