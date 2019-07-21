@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
-    private List<Scooter> scooterList = new ArrayList<>(); //new here
+    private List<Scooter> scooterList = new ArrayList<>();
     private List<User> userList = new ArrayList<>();
 
     public DataBase() {
