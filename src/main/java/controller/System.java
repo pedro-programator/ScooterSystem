@@ -1,14 +1,19 @@
 package controller;
 
-import model.*;
+import model.DataBase;
+import model.Scooter;
+import model.User;
+
+import java.util.List;
 
 public class System {
 
-private User user;
-private Bill bill;
-private Rental rental;
-private Scooter scooter;
-private DataBase dataBase;
+    private List<User> userList;
+    private List<Scooter> scooterList;
+    private DataBase dataBase;
 
-
+    public System(DataBase dataBase) {
+        this.userList = dataBase.getUserList();
+        this.scooterList = dataBase.getScooterList();
+    }
 }
