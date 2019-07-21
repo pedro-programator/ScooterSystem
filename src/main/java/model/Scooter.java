@@ -23,6 +23,10 @@ public class Scooter {
         isRent = rent;
     }
 
+    public int getIDThisScooter() {
+        return IDThisScooter;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
