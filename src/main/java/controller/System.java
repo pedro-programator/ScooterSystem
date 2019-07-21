@@ -1,13 +1,12 @@
 package controller;
 
 import model.DataBase;
+import model.Rental;
 import model.Scooter;
 import model.User;
-import java.util.List;
+
 import java.time.LocalDateTime;
-
-public class System {
-
+import java.util.List;
 
 public class System {
 
@@ -20,23 +19,20 @@ public class System {
         this.scooterList = dataBase.getScooterList();
     }
 
-public boolean rentScooter(User user, int IDScooter) {
+    public boolean rentScooter(User user, int IDScooter) {
 
-    for (Scooter scooter : dataBase.getScooterList()) {
-        if (scooter.getIDThisScooter() == IDScooter ) {
-            if (!scooter.isRent()){
-            Rental rental = new Rental(LocalDateTime.now(), scooter);
-            user.addRental(rental);
-            return true;
-        }
+        for (Scooter scooter : dataBase.getScooterList()) {
+            if (scooter.getIDThisScooter() == IDScooter) {
+                if (!scooter.isRent()) {
+                    Rental rental = new Rental(LocalDateTime.now(), scooter);
+                    user.addRental(rental);
+                    return true;
+                }
+            }
+            return false;
         }
         return false;
     }
-    return false;
-}
-
-
-}
 
 }
 
