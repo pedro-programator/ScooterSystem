@@ -10,13 +10,11 @@ import java.util.List;
 
 public class System {
 
-    private List<User> userList;
-    private List<Scooter> scooterList;
+
     private DataBase dataBase;
 
-    public System(DataBase dataBase) {
-        this.userList = dataBase.getUserList();
-        this.scooterList = dataBase.getScooterList();
+    public System() {
+        this.dataBase = new DataBase();
     }
 
     public boolean rentScooter(User user, int IDScooter) {
