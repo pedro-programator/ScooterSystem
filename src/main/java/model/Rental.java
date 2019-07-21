@@ -24,6 +24,15 @@ public class Rental {
     }
 
     @Override
+    public String toString() {
+        return "Rental{" +
+                "start=" + start +
+                ", end=" + end +
+                ", scooter=" + scooter +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
