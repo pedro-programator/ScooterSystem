@@ -7,10 +7,10 @@ import model.User;
 
 import java.time.LocalDateTime;
 
-public class System {
+public class ScooterSystem {
     private DataBase dataBase;
 
-    public System() {
+    public ScooterSystem() {
         this.dataBase = new DataBase();
     }
 
