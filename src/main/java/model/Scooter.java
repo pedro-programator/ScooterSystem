@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class Scooter {
 
-    static private int numer =0;
+    static private int number =0;
     private int IDThisScooter;
     private boolean isRent;
 
 
     public Scooter( ) {
-        this.IDThisScooter = numer;
+        this.IDThisScooter = number;
         this.isRent = false ;
-        numer+=1;
+        number +=1;
     }
 
     public boolean isRent() {
