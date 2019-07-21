@@ -9,10 +9,10 @@ public class Scooter {
     private boolean isRent;
 
 
-    public Scooter( ) {
+    public Scooter() {
         this.ScooterID = number;
-        this.isRent = false ;
-        number +=1;
+        this.isRent = false;
+        number += 1;
     }
 
     public boolean isRent() {
@@ -42,6 +42,6 @@ public class Scooter {
 
     @Override
     public String toString() {
-        return "Scooter "+ ScooterID +" is Rent "+ isRent;
+        return "Scooter " + ScooterID + " is Rent " + isRent;
     }
 }

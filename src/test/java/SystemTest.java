@@ -1,16 +1,15 @@
+import controller.ScooterSystem;
 import model.Scooter;
 import model.User;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import controller.System;
-import org.junit.jupiter.params.ParameterizedTest;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SystemTest {
 
-    System system = new System();
+    ScooterSystem system = new ScooterSystem();
 
 
     Scooter scooter1 = new Scooter();
@@ -22,6 +21,7 @@ public class SystemTest {
     User user3 = new User("Artur3");
     User user4 = new User("Artur3");
     User user5 = new User("Artur3");
+
     @BeforeEach
     void preperData() {
 
@@ -34,16 +34,19 @@ public class SystemTest {
         system.addScooter(scooter1);
         system.addScooter(scooter2);
         system.addScooter(scooter3);
+        for (Scooter scooter : system.getDataBase().getScooterList()) {
+            System.out.println(scooter);
+        }
     }
 
 
     @Test
     void rentScooterTest() {
-        assertTrue(system.rentScooter(user1,0));
-        assertTrue(system.rentScooter(user2,1));
-        assertTrue(system.rentScooter(user3,2));
-        assertFalse(system.rentScooter(user3,3));
-        assertFalse(system.rentScooter(user3,2));
+        assertTrue(system.rentScooter(user1, 1));
+        assertTrue(system.rentScooter(user2, 2));
+        assertTrue(system.rentScooter(user3, 3));
+        assertFalse(system.rentScooter(user3, 3));
+        assertFalse(system.rentScooter(user3, 2));
 
 
     }
