@@ -29,6 +29,10 @@ public class Rental {
         return start;
     }
 
+    public void setEnd(LocalDateTime end) {
+        this.end = end;
+    }
+
     public Scooter getScooter() {
         return scooter;
     }
