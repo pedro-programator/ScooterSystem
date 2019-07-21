@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class Scooter {
 
-    static private int number =0;
-    private int IDThisScooter;
+    static private int number = 1;
+    private int ScooterID;
     private boolean isRent;
 
 
     public Scooter( ) {
-        this.IDThisScooter = number;
+        this.ScooterID = number;
         this.isRent = false ;
         number +=1;
     }
@@ -23,8 +23,8 @@ public class Scooter {
         isRent = rent;
     }
 
-    public int getIDThisScooter() {
-        return IDThisScooter;
+    public int getScooterID() {
+        return ScooterID;
     }
 
     @Override
@@ -32,16 +32,16 @@ public class Scooter {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Scooter scooter = (Scooter) o;
-        return IDThisScooter == scooter.IDThisScooter;
+        return ScooterID == scooter.ScooterID;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(IDThisScooter);
+        return Objects.hash(ScooterID);
     }
 
     @Override
     public String toString() {
-        return "Scooter "+IDThisScooter+" is Rent "+ isRent;
+        return "Scooter "+ ScooterID +" is Rent "+ isRent;
     }
 }

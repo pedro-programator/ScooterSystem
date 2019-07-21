@@ -6,21 +6,25 @@ import model.Scooter;
 import model.User;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class System {
-
-
     private DataBase dataBase;
 
     public System() {
         this.dataBase = new DataBase();
     }
 
-    public boolean rentScooter(User user, int IDScooter) {
+    public void addUser(User user) { //adds user to database.userList
+        dataBase.getUserList().add(user);
+    }
 
+    public void addScooter(Scooter scooter) { //adds scooter to database.scooterList
+        dataBase.getScooterList().add(scooter);
+    }
+
+    public boolean rentScooter(User user, int IDScooter) {
         for (Scooter scooter : dataBase.getScooterList()) {
-            if (scooter.getIDThisScooter() == IDScooter) {
+            if (scooter.getScooterID() == IDScooter) {
                 if (!scooter.isRent()) {
                     scooter.setRent(true);
                     Rental rental = new Rental(LocalDateTime.now(), scooter);
@@ -32,6 +36,5 @@ public class System {
         }
         return false;
     }
-
 }
 
