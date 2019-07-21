@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Scooter {
 
-    static private int number = 0;
+    static private int number = 1;
     private int ScooterID;
     private boolean isRent;
 
