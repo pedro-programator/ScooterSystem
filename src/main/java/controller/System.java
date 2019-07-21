@@ -14,7 +14,6 @@ public class System {
         this.dataBase = new DataBase();
     }
 
-
     public void addUser(User user) { //adds user to database.userList
         dataBase.getUserList().add(user);
     }
