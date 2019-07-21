@@ -15,7 +15,6 @@ public class System {
     }
 
     public boolean rentScooter(User user, int IDScooter) {
-
         for (Scooter scooter : dataBase.getScooterList()) {
             if (scooter.getScooterID() == IDScooter) {
                 if (!scooter.isRent()) {
@@ -27,6 +26,14 @@ public class System {
             return false;
         }
         return false;
+    }
+
+    public void addUser(User user) { //adds user to database.userList
+        dataBase.getUserList().add(user);
+    }
+
+    public void addScooter(Scooter scooter) { //adds scooter to database.scooterList
+        dataBase.getScooterList().add(scooter);
     }
 
 }
