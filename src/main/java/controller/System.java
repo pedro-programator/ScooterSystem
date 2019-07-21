@@ -22,6 +22,7 @@ public class System {
         for (Scooter scooter : dataBase.getScooterList()) {
             if (scooter.getIDThisScooter() == IDScooter) {
                 if (!scooter.isRent()) {
+                    scooter.setRent(true);
                     Rental rental = new Rental(LocalDateTime.now(), scooter);
                     user.addRental(rental);
                     return true;
