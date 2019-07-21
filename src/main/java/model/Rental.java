@@ -7,7 +7,13 @@ public class Rental {
     private LocalDateTime start;
     private LocalDateTime end;
     private Scooter scooter;
+//Aktywne wypożyczenie
 
+    public Rental(LocalDateTime start, Scooter scooter) {
+        this.start = start;
+        this.scooter = scooter;
+    }
+//oddana hulajnoga do rachunku
     public Rental(LocalDateTime start, LocalDateTime end, Scooter scooter) {
         this.start = start;
         this.end = end;
