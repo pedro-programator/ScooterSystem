@@ -1,14 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
-    private List<Scooter> scooterList;
-    private List<User> userList;
+    private List<Scooter> scooterList = new ArrayList<>(); //new here
+    private List<User> userList = new ArrayList<>();
 
-    public DataBase(List<Scooter> scooterList, List<User> userList) {
-        this.scooterList = scooterList;
-        this.userList = userList;
+    public DataBase() {
     }
 
     public List<Scooter> getScooterList() {
