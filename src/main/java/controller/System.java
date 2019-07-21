@@ -14,6 +14,15 @@ public class System {
         this.dataBase = new DataBase();
     }
 
+
+    public void addUser(User user) { //adds user to database.userList
+        dataBase.getUserList().add(user);
+    }
+
+    public void addScooter(Scooter scooter) { //adds scooter to database.scooterList
+        dataBase.getScooterList().add(scooter);
+    }
+
     public boolean rentScooter(User user, int IDScooter) {
         for (Scooter scooter : dataBase.getScooterList()) {
             if (scooter.getScooterID() == IDScooter) {
@@ -27,14 +36,5 @@ public class System {
         }
         return false;
     }
-
-    public void addUser(User user) { //adds user to database.userList
-        dataBase.getUserList().add(user);
-    }
-
-    public void addScooter(Scooter scooter) { //adds scooter to database.scooterList
-        dataBase.getScooterList().add(scooter);
-    }
-
 }
 
