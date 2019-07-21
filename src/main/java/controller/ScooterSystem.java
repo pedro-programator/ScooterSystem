@@ -35,13 +35,11 @@ public class ScooterSystem {
 
     public boolean rentScooter(User user, int IDScooter) {
         for (Scooter scooter : dataBase.getScooterList()) {
-            if (scooter.getScooterID() == IDScooter) {
-                if (!scooter.isRent()) {
-                    scooter.setRent(true);
-                    Rental rental = new Rental(LocalDateTime.now(), scooter);
-                    user.addRental(rental);
-                    return true;
-                }
+            if (scooter.getScooterID() == IDScooter && !scooter.isRent()) {
+                scooter.setRent(true);
+                Rental rental = new Rental(LocalDateTime.now(), scooter);
+                user.addRental(rental);
+                return true;
             }
         }
         return false;
