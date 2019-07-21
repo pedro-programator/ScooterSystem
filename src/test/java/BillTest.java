@@ -44,23 +44,23 @@ public class BillTest {
     @Test
     void checkPricingHolidays(){
         double price = 30.0;
-        assertEquals(price,bill3.countPrice());
+        assertEquals(price,bill3.countPrice(rental3));
     }
     @Test
     void checkPricingInRushHour(){
         double price = 30.0;
-        assertEquals(30.0,bill2.countPrice());
+        assertEquals(30.0,bill2.countPrice(rental2));
     }
     @Test
     void checkPricingMethod(){
         double expected = 60.0;
-        assertEquals(expected, bill1.countPrice());
+        assertEquals(expected, bill1.countPrice(rental));
     }
     @Test
     void checkPricingForDifferentTimes(){
         double expected = 45.0;
 
-        assertEquals(expected,bill4.countPrice());
+        assertEquals(expected,bill4.countPrice(rental4));
     }
     @Test
     void checkPricingForDifferent2(){
@@ -69,7 +69,7 @@ public class BillTest {
         LocalDateTime end5 =LocalDateTime.of(2019,7,22,9,15);
         Rental rental5 = new Rental(start5,end5,scooter1);
         Bill bill5 = new Bill(rental5);
-        assertEquals(expected,bill5.countPrice());
+        assertEquals(expected,bill5.countPrice(rental5));
     }
     @Test
     void checkPricingForNightBetweenFriday(){
@@ -78,6 +78,6 @@ public class BillTest {
         LocalDateTime end6 =LocalDateTime.of(2019,7,20,0,30);
         Rental rental6 = new Rental(start6,end6,scooter1);
         Bill bill6 = new Bill(rental6);
-        assertEquals(expected,bill6.countPrice());
+        assertEquals(expected,bill6.countPrice(rental6));
     }
 }

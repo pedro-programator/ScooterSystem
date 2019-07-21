@@ -32,7 +32,6 @@ public class ScooterSystem {
         }
     }
 
-
     public boolean rentScooter(User user, int IDScooter) {
         for (Scooter scooter : dataBase.getScooterList()) {
             if (scooter.getScooterID() == IDScooter && !scooter.isRent()) {
@@ -44,7 +43,6 @@ public class ScooterSystem {
         }
         return false;
     }
-
 
     public DataBase getDataBase() {
         return dataBase;
