@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Rental {
-    LocalDateTime start;
-    LocalDateTime end;
-    Scooter scooter;
+    private LocalDateTime start;
+    private LocalDateTime end;
+    private Scooter scooter;
 
     public Rental(LocalDateTime start, LocalDateTime end, Scooter scooter) {
         this.start = start;
