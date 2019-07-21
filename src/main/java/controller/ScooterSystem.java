@@ -7,10 +7,10 @@ import model.User;
 
 import java.time.LocalDateTime;
 
-public class System {
+public class ScooterSystem {
     private DataBase dataBase;
 
-    public System() {
+    public ScooterSystem() {
         this.dataBase = new DataBase();
     }
 
@@ -23,16 +23,19 @@ public class System {
     }
 
     public boolean rentScooter(User user, int IDScooter) {
+
         for (Scooter scooter : dataBase.getScooterList()) {
             if (scooter.getScooterID() == IDScooter) {
                 if (!scooter.isRent()) {
                     scooter.setRent(true);
                     Rental rental = new Rental(LocalDateTime.now(), scooter);
                     user.addRental(rental);
+
                     return true;
                 }
+
             }
-            return false;
+
         }
         return false;
     }
